@@ -49,9 +49,9 @@ function App() {
         title a ualşana kadar geçen sürede yükleniyor yazısı gösterilecek */} 
         <span role="img" aria-label='go!'>
     {!Object.keys(apod).length && <p> ...Yükleniyor!!!</p>}
-    {Object.keys(apod).length /* ya da apod.title yazabilirdim */ && <Header dataProp= {apod} />}
         <input type="date" id="date" name="date" onChange={dateHandler} />
         {/*inputu ekledik ki ekranda tarih bilgisi seçebilelim. dateHandler (bir event fnk) atadık */}
+    {Object.keys(apod).length /* ya da apod.title yazabilirdim */ && <Header dataProp= {apod} />}
     {error && <p> Network Error : {error}</p>}
     {/*burda dedik ki error verirse bize git <p>error<p> yazdır. bunun da içini catch in altındaki
     setError u tanımlayarak yaptık.*/}

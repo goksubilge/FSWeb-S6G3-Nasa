@@ -21,6 +21,9 @@ function Header (props){
         {apod.media_type === "video" && 
             <img src={apod.url} alt={apod.title}/>  
         }
+        {apod.media_type === "image" && 
+            <img src={apod.url} alt={apod.title}/>  
+        }
     </div>
       );
 }
