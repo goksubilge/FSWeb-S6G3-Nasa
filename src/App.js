@@ -34,7 +34,7 @@ function App() {
       setApod(response.data);
   }).catch (function(error){
     console.log (error);
-    setError(error.message);
+    setError(error.message)
   })}, [date] )
 
   const dateHandler = (e) => {
@@ -49,7 +49,7 @@ function App() {
         title a ualşana kadar geçen sürede yükleniyor yazısı gösterilecek */} 
         <span role="img" aria-label='go!'>
     {!Object.keys(apod).length && <p> ...Yükleniyor!!!</p>}
-    {apod.title /* ya da Object.keys(apod).length yazabilirdim */ && <Header dataProp= {apod} />}
+    {Object.keys(apod).length /* ya da apod.title yazabilirdim */ && <Header dataProp= {apod} />}
         <input type="date" id="date" name="date" onChange={dateHandler} />
         {/*inputu ekledik ki ekranda tarih bilgisi seçebilelim. dateHandler (bir event fnk) atadık */}
     {error && <p> Network Error : {error}</p>}
