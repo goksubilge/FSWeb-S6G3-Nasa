@@ -1,0 +1,52 @@
+// app.js //
+
+resim linkleri:
+https://apod.nasa.gov/apod/image/2307/CocoaBeach_BuckMoon_Seeley-201_1100.jpg
+
+https://www.webtekno.com/images/editor/default/0004/04/a24e0ea25ae775d693dd370efec96b4a395a20dc.jpeg
+
+https://api.nasa.gov/planetary/apod?api_key=CaxSuXdVT3QdQ2dD9TYfN14Ne1Og3TgUH1MHVJbe&date=2014-12-01 alternatif1
+
+https://api.nasa.gov/planetary/apod?api_key=CaxSuXdVT3QdQ2dD9TYfN14Ne1Og3TgUH1MHVJbe&date=2020-04-19 videolu
+
+https://api.nasa.gov/planetary/apod?api_key=CaxSuXdVT3QdQ2dD9TYfN14Ne1Og3TgUH1MHVJbe
+
+// header.js //
+
+const [baslik, setBaslik] = useState ();
+const [copy, setCopy] = useState ();
+const [exp, setExp] = useState(); 
+
+{birinci süslü parantezde apod.title yoksa yani internet hızı yavaşken oluyo bu, title a ualşana kadar geçen sürede yükleniyor yazısı gösterilecek }
+
+inputu ekledik ki ekranda tarih bilgisi seçebilelim. dateHandler (bir event fnk) atadık
+
+burda dedik ki error verirse bize git <p>error<p> yazdır. bunun da içini catch in altındaki setError u tanımlayarak yaptık.
+
+// main.js //
+
+<img src={apod.url} alt = {apod.title} /> bunu da yalnızca url göstermek için kullanmıştım
+
+useEffect ile axios ile APOD'tan veri alıyoruz. useEffect bir defa okuyordu, hatırlayalım.
+
+axios ta get ile kökleri verebilirsin sonra da parametreleri de yazabilirsin, yeni bir obje açarak.
+
+.get ('user', {params: {ID:12345}})
+
+date: date bağladık dinamik olsun diye, useState i de default değerini günün tarihi yaptık.
+
+yseEffect te state değşince tekrar çalışsın diye gidip [date] yazdık, date tetiklendiğinde tekrar çalışacak fonksiyon
+
+Bu bir sayfa URL i 
+std hdml tag i; ileri geri control etmek için controls kısmı
+<video height="240" weight="320" controls >
+    <source type="video/mp4" source="url/......">
+    </source>
+</video>
+
+bizim burdaki video oynatabilmemiz için direkt videonun URl ini vermemiz gerekiyor
+
+// Img.js // Video.js //
+
+bu iki jsde propsları farklı yöntemle gönderdim. önemli olan self closing tag'inde parametrenin yani propsun ismi önemli, çünkü onu takip edecek.
+mesela: imgyeGidenApod ismiyle img.js in içinde kullanmam önemli olan. bu propumun ismi ve bu ismin doğru yazılması önemli.
